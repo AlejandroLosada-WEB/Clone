@@ -1,1 +1,127 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-tab-label-content{
+  color:white;
+}
+.mat-tab-label-container , .btnLogin{
+  background: #f09433; 
+  background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+  background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+}
+.btnLogin{
+  opacity:0.6;
+}
+
+#mat-tab-label-0-2{
+  display: none !important;
+}
+
+.mat-tab-header-pagination-controls-enabled .mat-tab-header-pagination {
+  display:none !important;
+}
+
+.totalheight{
+  height:100vh;
+  background-color: #F5F5F5;
+  background-image: url(./assets/fondo2.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.maxWidth{
+  max-width:30%;
+}
+.maxWidthForm{
+  max-width:400px;
+  width:100%;
+}
+
+
+:host ::ng-deep .custom-spinner circle{   
+  stroke:  rgba(252,70,107,1);
+}
+
+.link-primary{
+  cursor:pointer;
+}
+#mat-tab-label-0-2{
+  display: none !important;
+}
+
+
+
+@media (min-width: 576px) {
+    .w-sm-25{
+      width:25% !important;
+    }
+    
+    .w-sm-50{
+      width:50% !important;
+    }
+    
+    .w-sm-75{
+      width:75% !important;
+    }
+    .w-sm-100{
+      width:100% !important;
+    }
+  }
+  
+  
+  @media (min-width: 768px) {
+    .w-md-25{
+      width:25% !important;
+    }
+    
+    .w-md-50{
+      width:50% !important;
+    }
+    
+    .w-md-75{
+      width:75% !important;
+    }
+    .w-md-100{
+      width:100% !important;
+    }
+  }
+  
+  
+  @media (min-width: 992px) { 
+    .w-lg-25{
+      width:25% !important;
+    }
+    
+    .w-lg-50{
+      width:50% !important;
+    }
+    
+    .w-lg-75{
+      width:75% !important;
+    }
+    .w-lg-100{
+      width:100% !important;
+    }
+  }
+  
+  
+  @media (min-width: 1200px) { 
+    .w-xl-25{
+      width:25% !important;
+    }
+    
+    .w-xl-50{
+      width:50% !important;
+    }
+    
+    .w-xl-75{
+      width:75% !important;
+    }
+    .w-xl-100{
+      width:100% !important;
+    }
+  }

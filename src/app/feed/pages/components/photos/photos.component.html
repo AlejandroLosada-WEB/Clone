@@ -1,0 +1,81 @@
+<div class="mb-4">
+    <button class="w-100 w-sm-50 shadow p-4 mb-4 mb-sm-0"  mat-button (click)="photosWithComments()">
+        FOTOS CON COMENTARIOS
+    </button>
+    <button class="w-100 w-sm-50 shadow p-4 mb-4 mb-sm-0" mat-button (click)="photosWithOutComments()">
+        FOTOS SIN COMENTARIOS
+    </button>
+</div>
+
+
+<!--<div *ngFor="let photo of this.photofeed; let i = index">
+
+<div class="uk-child-width-expand@s uk-text-center p-2" uk-grid uk-height-match="target: > div > .uk-card">
+    <div *ngIf="photo.one">
+        <a  href="#modal-full" (click)="createObjectModal(photo.one)" uk-toggle><img style="height:100%;max-height:600px;" src="{{photo.one.path}}"></a>
+     </div>
+     <div *ngIf="photo.two">
+        <a href="#modal-full" (click)="createObjectModal(photo.two)" uk-toggle><img style="height:100%;max-height:600px;" src="{{photo.two.path}}"></a>
+     </div>
+     <div *ngIf="photo.three">
+        <a  href="#modal-full" (click)="createObjectModal(photo.three)" uk-toggle><img style="height:100%;max-height:600px;" src="{{photo.three.path}}"></a>
+     </div>
+</div>
+
+</div>-->
+
+<div *ngFor="let photo of this.photofeed; let i = index">
+
+<div class="uk-child-width-expand@s uk-text-center p-2" uk-grid uk-height-match="target: > div > .uk-card" uk-scrollspy="cls: uk-animation-fade; target: .uk-cardo; delay: 500; repeat: true">
+    <div *ngIf="photo.one" class="uk-cardo" >
+        <a  href="#modal-full" (click)="createObjectModal(photo.one)" uk-toggle><img loading="lazy" style="height:100%;max-height:600px;" [defaultImage]="photo.one.path" [lazyLoad]="photo.one.path"></a>
+     </div>
+     <div *ngIf="photo.two" class="uk-cardo">
+        <a href="#modal-full" (click)="createObjectModal(photo.two)" uk-toggle><img loading="lazy" style="height:100%;max-height:600px;" [defaultImage]="photo.two.path" [lazyLoad]="photo.two.path" ></a>
+     </div>
+     <div *ngIf="photo.three" class="uk-cardo">
+        <a href="#modal-full" (click)="createObjectModal(photo.three)" uk-toggle><img loading="lazy" style="height:100%;max-height:600px;" [defaultImage]="photo.three.path" [lazyLoad]="photo.three.path"></a>
+     </div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+<div id="modal-full" class="uk-modal-full" uk-modal>
+    <div class="uk-modal-dialog">
+        <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
+        <div class="uk-grid-collapse uk-child-width-1-2@s uk-flex-middle" uk-grid>
+            <div class="uk-background-cover" [style.background-image]="'url('+ this.modalObject.path + ')'"  uk-height-viewport></div>
+            <div class="photosContainer" >
+               <app-photos-comment [id_photo]="this.modalObject._id" [id_user_photo]="this.modalObject._id_user"></app-photos-comment>
+               <!--<article class="uk-comment uk-comment-primary mb-2">
+                    <header class="uk-comment-header">
+                        <div class="uk-grid-medium uk-flex-middle" uk-grid>
+                            <div class="uk-width-auto">
+                                <img class="uk-comment-avatar" src="../../../../../assets/photosUsers/avatar.jpg" width="80" height="80" alt="">
+                            </div>
+                            <div class="uk-width-expand">
+                                <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset" href="#">Author si pinchas aqui te lleva al user</a></h4>
+                                <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
+                                    <li><a href="#">12 days ago o poner el día de la foto</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </header>
+                    <div class="uk-comment-body">
+                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                    </div>
+                </article>-->
+                
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</div>

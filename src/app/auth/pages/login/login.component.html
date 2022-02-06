@@ -1,0 +1,90 @@
+
+        
+        <div [ngSwitch]="formSwitch" class="maxWidthForm">
+            <div *ngSwitchCase="1" >
+                <button  type="button" (click)="selectedIndex = 0" class="w-50 mt-3 btn shadow border-0 shadow btnLogin text-white opacity-100">
+                    LOGIN
+                </button>
+                <button  type="button" (click)="selectedIndex = 1" class="w-50 mt-3 btn shadow  border-0 shadow btnLogin text-white opacity-100">
+                    REGISTRO
+                </button>
+            </div>
+            <mat-tab-group mat-stretch-tabs id="tabGroup" #tabGroup [(selectedIndex)]=selectedIndex>
+                <mat-tab label="LOGIN" style="display:block !important;">
+                    <form *ngSwitchCase="1" [formGroup]="formLogin" (ngSubmit)="login()" class=""> 
+                        <div class="bg-white shadow p-3 p-sm-5">
+                            <img src="../../../../assets/login3.png" class="rounded-circle mx-auto d-block mb-5 maxWidth" alt="img">
+                            <mat-form-field appearance="fill" class="w-100">
+                                <input  formControlName="email" id="email" name="email"  matInput placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                            </mat-form-field>
+            
+                            <mat-form-field appearance="fill" class="w-100">
+                                <input  formControlName="password" id="password" name="password" type="password" matInput placeholder="Password">
+                            </mat-form-field>
+                            <!--<mat-checkbox formControlName="recordar" >Recordar a este usuario</mat-checkbox>-->
+                            <button  type="submit" class="w-100 mt-3 mb-3 btn shadow btn-light shadow btnLogin text-white">
+                                LOGIN
+                            </button>
+                            <small  (click)="selectedIndex = 2" class="link-primary">¿Has perdido tu contraseña?</small>
+                            
+                        </div>
+                    </form>
+                </mat-tab>
+                <mat-tab label="REGÍSTRATE" style="display:block !important;">
+                    <form *ngSwitchCase="1" [formGroup]="formRegistro" (ngSubmit)="register()" class=""> 
+                        <div  class="bg-white shadow p-3 p-sm-5">
+                            
+                            <mat-form-field appearance="fill" class="w-100">
+                                <input  formControlName="emailRegister" id="emailRegister" name="emailRegister"  matInput placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                            </mat-form-field>
+            
+                            <mat-form-field appearance="fill" class="w-100">
+                                <input  formControlName="passwordRegister" id="passwordRegister" name="passwordRegister"  matInput type="password" placeholder="Password">
+                            </mat-form-field>
+
+                            <mat-form-field appearance="fill" class="w-100">
+                                <input  formControlName="passwordRepeat" id="passwordRepeat" name="passwordRepeat" type="password" matInput placeholder="Repite Password">
+                            </mat-form-field>
+
+                            <mat-form-field appearance="fill" class="w-100">
+                                <input  formControlName="nameUser" id="nameUser" name="nameUser"  matInput placeholder="Nombre Usuario">
+                            </mat-form-field>
+
+                            <button  type="submit" class="w-100 mt-3 mb-3 btn shadow btn-light shadow btnLogin text-white">
+                                REGÍSTRATE
+                            </button>
+                            <small  (click)="selectedIndex = 2" class="link-primary">¿Has perdido tu contraseña?</small>
+                        </div>
+                    </form>
+                </mat-tab>
+                <mat-tab style="width:0px;display:none !important;">
+                    <form *ngSwitchCase="1" [formGroup]="formForgot" (ngSubmit)="forgotMailUser()" class=""> 
+                        <div  class="bg-white shadow p-3 p-sm-5">
+                            <h5 class="mb-4">Has perdido tu contraseña</h5>
+                            <p>Introduce tu email para recuperar tu contraseña</p>
+                            <mat-form-field appearance="fill" class="w-100">
+                                <input  formControlName="emailForgot" id="emailForgot" name="emailForgot"  matInput placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                            </mat-form-field>
+
+                            <button  type="submit" class="w-100 mt-3 mb-3 btn shadow btn-light shadow btnLogin text-white">
+                                ENVIAR EMAIL
+                            </button>
+                        </div>
+                    </form>
+                </mat-tab>
+              </mat-tab-group>
+            
+
+            <div *ngSwitchCase="2" class="">
+                <mat-spinner class="custom-spinner mx-auto"></mat-spinner>
+            </div>
+        </div>
+
+    
+
+
+                 
+                    
+                    
+
+                    

@@ -1,0 +1,14 @@
+<form [formGroup]="photoUploadForm"  class="">
+    <div class="fixed-bottom" style="z-index:3;">
+        <button class="mx-auto d-block btnPhotoUploaded shadow text-white mb-4" style="border-radius:30px;" mat-button (click)="clickToUpload()">
+            <mat-icon class="d-flex align-items-center justify-content-center" >
+                <input id="uploadPhotoButton" style="display:none;" class="position-absolute" formControlName="photo" type="file" multiple ng2FileSelect [uploader]="uploader" (ngModelChange)="modelChangePhoto()"><img src="../../../../../assets/add_photo.png">
+            </mat-icon>
+        </button>
+    </div>
+</form>
+
+
+<div id="matSpinner" class="fixed-top h-100 d-flex align-items-center bg-dark opacity-50" style="visibility: hidden;">
+    <mat-spinner class="custom-spinner mx-auto"></mat-spinner>
+</div>

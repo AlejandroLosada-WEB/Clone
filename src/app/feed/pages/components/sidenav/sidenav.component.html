@@ -1,0 +1,50 @@
+
+<div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar">
+    <nav class="uk-navbar-container" uk-navbar style="position: relative; z-index: 980;">
+        <div class="uk-navbar-left">
+
+            <ul class="uk-navbar-nav">
+                <li class="uk-active"><a href="#offcanvas-slide" class="nav-link" uk-toggle>Menú</a></li>
+            </ul>
+
+        </div>
+       
+        <div class="d-flex justify-content-end  w-100">
+            <button class="" mat-button (click)="logOut()">
+                <mat-icon class="d-flex align-items-center justify-content-center" >
+                    <img src="../../../../../assets/logout.png">
+                </mat-icon>
+            </button>
+        </div>
+
+    </nav>
+</div>
+
+
+<div id="matSpinnerNav" class="fixed-top h-100 d-flex align-items-center bg-dark opacity-50" style="visibility: hidden;">
+    <mat-spinner class="custom-spinner mx-auto"></mat-spinner>
+</div>
+
+
+
+<div id="offcanvas-slide" uk-offcanvas>
+    <div class="uk-offcanvas-bar bacgroundNav">
+        <img *ngIf="!this.user.photoProfile" class="rounded-circle mx-auto d-block mb-3" style="max-width:120px;max-height:120px;width:100%;height:100%;" src="../../../../../assets/users/sinfoto.jpg">
+        <img *ngIf="this.user.photoProfile" class="rounded-circle mx-auto d-block mb-3 shadow" style="max-width:120px;max-height:120px;width:100%;height:100%;" [defaultImage]="this.user.photoProfile" [lazyLoad]="this.user.photoProfile" >
+        <ul class="uk-nav uk-nav-default">
+            <form [formGroup]="profileUploadForm" (ngSubmit)="profileUpload()" class=""> 
+            <li class="uk-active d-flex justify-content-center">
+                <div class="js-upload" uk-form-custom>
+                    
+                    <input formControlName="avatar" type="file" multiple ng2FileSelect [uploader]="uploader" (ngModelChange)="modelChangeFn()">
+                    <button id="photoUploadButton" class="uk-button uk-button-default" style="cursor:pointer;" type="button" tabindex="-1">Subir foto de perfil</button>
+                </div>
+            </li>
+            <li id="photoUploadButtonDelete" class="mt-4 d-flex justify-content-center text-white" style="cursor:pointer;visibility:hidden;" (click)="deletePhoto()">Eliminar Foto</li>
+            </form> 
+            <li class="mt-4 uk-active d-flex justify-content-center" (click)="profileUpload()"><a href="#offcanvas-slide" class="nav-link" uk-toggle>Cerrar y guardar cambios</a></li>
+            
+        </ul>
+
+    </div>
+</div>

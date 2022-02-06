@@ -1,0 +1,7 @@
+{
+    "/v1/users/imagen/photos":{
+        "target":"https://localhost:3003",
+        "secure":false,
+        "changeOrigin":true
+    }
+}

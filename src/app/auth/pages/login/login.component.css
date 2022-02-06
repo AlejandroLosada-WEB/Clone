@@ -1,0 +1,14 @@
+:host ::ng-deep .custom-spinner circle{   
+    stroke:  rgba(252,70,107,1);
+}
+:host {
+  width:90%;
+  display:flex;
+  justify-content: center;
+}
+
+
+::ng-deep .mat-tab-list .mat-tab-labels{
+
+  display: none !important;
+}

@@ -1,0 +1,29 @@
+
+<button class="mx-auto bg-danger d-block btnPhotoUploaded shadow text-white mt-4 mb-4" style="border-radius:30px;" mat-button (click)="comment()">
+    Comentar
+</button>
+
+
+
+<article *ngFor="let comment of comments" class="uk-comment uk-comment-primary mb-2">
+    <header class="uk-comment-header">
+        <div class="uk-grid-medium uk-flex-middle" uk-grid>
+            <div class="uk-width-auto">
+                <img class="uk-comment-avatar" src="{{comment.path_avatar_user_comment}}" width="80" height="80" alt="">
+            </div>
+            <div class="uk-width-expand">
+                <div *ngIf="comment._id_user_comment==this.user._id" class="d-flex justify-content-end" (click)="commentDelete(comment._id)">
+                    <button class=" uk-close-large" type="button" uk-close></button>
+                </div>
+                <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset" href="#">{{comment.name_user_comment}}</a></h4>
+                <input type="hidden" id="id_user_comment" value="{{comment._id_user_comment}}">
+                <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
+                    <li><a href="#">{{comment.fecha}} {{comment.hora}}</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="uk-comment-body">
+        <p>{{comment.comment}}.</p>
+    </div>
+</article>
